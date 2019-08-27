@@ -1,0 +1,33 @@
+# Binaries for programs and plugins
+*.exe
+*.dll
+*.so
+*.dylib
+*.iws
+task.xml
+.idea/
+
+
+# Test binary, build with `go test -c`
+*.test
+
+# Output of the go coverage tool, specifically when used with LiteIDE
+*.out
+
+# Project-local glide cache, RE: https://github.com/Masterminds/glide/issues/736
+.glide/
+
+# Debug file generated during testing
+server/debug
+debug
+
+# System Files
+*.DS_Store
+project/build.properties
+target/
+*.sc
+.idea/uiDesigner.xml
+
+# Play files
+src/main/scala/dev/tmp/
+.idea/shelf/

@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+import "google/protobuf/any.proto";
+
+package fedexgrpc;
+
+message SDMMeta {
+    string objectType  = 1;
+    string deviceName   = 2;
+    string objectName   = 3;
+    string cid          = 4;
+    string sid          = 5;
+    string hostOrigin   = 6;
+    repeated string headers = 7;
+    string id               = 8;
+    string delimiter = 9;
+}
+
+message RawMetricMessage {
+    uint64 receivedTimestamp = 1;  // Timesetamp in epoch millis when the message data was received
+    string sender = 2; // A string to identify the sending node
+    string receiver = 3;  // A string to identify the receiving node
+    string tenant = 4; // Tenant Name
+    string metricsType = 5;  // Unique descriptor for the metric data for the metric payload, e.g. VCX_TWAMP_CSV
+    string metricsTypeVersion = 6; // Version for the descriptor
+    bytes payload = 8;  // The metrics payload
+    google.protobuf.Any metadata = 9;
+}
